@@ -43,8 +43,15 @@ stages:
           arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
           zipAfterPublish: True
         
-      - task: PublishBuildArtifacts@1
-        displayName: 'publish artifacts'
+      # - task: PublishBuildArtifacts@1
+      #   displayName: 'publish artifacts'
+      #   inputs:
+      #     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+      #     artifactName: 'myWebsiteName'
+      
+      - task: AzureWebApp@1
         inputs:
-          pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
-          artifactName: 'myWebsiteName'
+          azureSubscription: 'Free Trial(88db5bf3-8efd-410e-bf40-7fbbdf893995)'
+          appType: 'webAppLinux'
+          appName: 'WebAppHGTEST'
+          package: '$(System.DefaultWorkingDirectory)/**/*.zip'
