@@ -53,5 +53,5 @@ stages:
         inputs:
           azureSubscription: 'Free Trial(88db5bf3-8efd-410e-bf40-7fbbdf893995)'
           appType: 'webAppLinux'
-          appName: 'WebAppHGTEST'
+          appName: 'WebAppHGTest123'
           package: '$(System.DefaultWorkingDirectory)/**/*.zip'
