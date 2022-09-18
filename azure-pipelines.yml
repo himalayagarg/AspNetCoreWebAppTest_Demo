@@ -11,7 +11,7 @@ stages:
     - job: 'build'
     
       pool:
-        vmImage: 'ubuntu-latest'
+        vmImage: 'windows-latest'
 
       steps:
 
@@ -51,7 +51,8 @@ stages:
       
       - task: AzureWebApp@1
         inputs:
-          azureSubscription: 'Free Trial(88db5bf3-8efd-410e-bf40-7fbbdf893995)'
-          appType: 'webAppLinux'
-          appName: 'WebAppHGTest123'
+          azureSubscription: 'Free Trial(1)(88db5bf3-8efd-410e-bf40-7fbbdf893995)'
+          appType: 'webApp'
+          appName: 'webapphg123'
           package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+          deploymentMethod: 'auto'
